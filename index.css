@@ -1,0 +1,213 @@
+:root {
+    --primary-color: #6C63FF; /* Soft Indigo */
+    --secondary-color: #FFA726; /* Warm Amber */
+    --background-color: #F3F4ED; /* Light Pastel Gray */
+    --container-background: #DDEBF7; /* Light Blue */
+    --grid-box1-background: #FF9AA2; /* Pastel Pink */
+    --grid-box2-background: #A2E2DB; /* Soft Teal */
+    --text-color: #2E2E2E; /* Charcoal Gray */
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Smooth shadow */
+    --transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    background-color: #41B3A2;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: #BDE8CA;
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 45px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.tasks-grid {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    
+}
+
+.task-card {
+    padding: 2rem;
+    border-radius: 10px;
+    color: var(--text-color);
+    gap: 45px;
+    transition: var(--transition);
+    background-color: #FF9AA2;
+}
+
+/* Specific background colors for grid boxes */
+.task-card.gallery {
+    background-color: #FF9AA2; /* Pastel Pink */
+}
+
+.task-card.calculator {
+    background-color: #FF9AA2; /* Soft Teal */
+}
+
+.task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+/* Gallery Styles */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--container-background);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.filter-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.filter-buttons button:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.filter-buttons button.active {
+    background-color: var(--secondary-color);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+/* Calculator Styles */
+.calculator-container {
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.calculator {
+    background: var(--container-background);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.display {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: right;
+    font-size: 1.5rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.history {
+    font-size: 0.875rem;
+    opacity: 0.7;
+    min-height: 1.25rem;
+}
+
+.current {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #E8EEF1; /* Subtle Blue Tint */
+}
+
+.buttons button {
+    border: none;
+    padding: 1.25rem;
+    font-size: 1.25rem;
+    background: var(--container-background);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.buttons button:hover {
+    background: #CFD8DC; /* Soft Gray Tint */
+}
+
+.buttons .equals {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.buttons .equals:hover {
+    background: #FB8C00; /* Richer Amber */
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.loading {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
